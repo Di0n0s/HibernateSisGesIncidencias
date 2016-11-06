@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 06-nov-2016 16:12:52 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="HibernateSisGesIncidenciasPOJOs.Incidencias" table="incidencias" catalog="sisgesincidencias" optimistic-lock="version">
+        <id name="idIncidencia" type="java.lang.Integer">
+            <column name="id_incidencia" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="empleadosByOrigen" class="HibernateSisGesIncidenciasPOJOs.Empleados" fetch="select">
+            <column name="origen" length="45" not-null="true" />
+        </many-to-one>
+        <many-to-one name="empleadosByDestino" class="HibernateSisGesIncidenciasPOJOs.Empleados" fetch="select">
+            <column name="destino" length="45" not-null="true" />
+        </many-to-one>
+        <property name="fechaHora" type="string">
+            <column name="fecha_hora" length="45" not-null="true" />
+        </property>
+        <property name="tipo" type="string">
+            <column name="tipo" length="45" not-null="true" />
+        </property>
+        <property name="detalle" type="string">
+            <column name="detalle" length="100" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 06-nov-2016 16:12:52 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="HibernateSisGesIncidenciasPOJOs.Empleados" table="empleados" catalog="sisgesincidencias" optimistic-lock="version">
+        <id name="username" type="string">
+            <column name="username" length="45" />
+            <generator class="assigned" />
+        </id>
+        <property name="password" type="string">
+            <column name="password" length="45" not-null="true" />
+        </property>
+        <property name="nombreCompleto" type="string">
+            <column name="nombre_completo" length="100" not-null="true" />
+        </property>
+        <property name="telefono" type="string">
+            <column name="telefono" length="45" not-null="true" />
+        </property>
+        <set name="historials" table="historial" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="username" length="45" not-null="true" />
+            </key>
+            <one-to-many class="HibernateSisGesIncidenciasPOJOs.Historial" />
+        </set>
+        <set name="incidenciasesForOrigen" table="incidencias" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="origen" length="45" not-null="true" />
+            </key>
+            <one-to-many class="HibernateSisGesIncidenciasPOJOs.Incidencias" />
+        </set>
+        <set name="incidenciasesForDestino" table="incidencias" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="destino" length="45" not-null="true" />
+            </key>
+            <one-to-many class="HibernateSisGesIncidenciasPOJOs.Incidencias" />
+        </set>
+    </class>
+</hibernate-mapping>
