@@ -22,6 +22,10 @@ public class Empleados  implements java.io.Serializable {
     public Empleados() {
     }
 
+    public Empleados(String username) {
+        this.username = username;
+    }
+
     public Empleados(String username, String password) {
         this.username = username;
         this.password = password;
@@ -95,13 +99,12 @@ public class Empleados  implements java.io.Serializable {
     }
 
     @Override
-    public String toString() {
-        return "Empleados{" + "username=" + username + ", password=" + password + ", nombreCompleto=" + nombreCompleto + ", telefono=" + telefono + ", historials=" + historials + ", incidenciasesForOrigen=" + incidenciasesForOrigen + ", incidenciasesForDestino=" + incidenciasesForDestino + '}';
+    public String toString() {//Modifico el toString para que no pete
+        return username ;
     }
 
 
 
 
 }
-
 

@@ -19,6 +19,10 @@ public class Incidencias  implements java.io.Serializable {
     public Incidencias() {
     }
 
+    public Incidencias(Integer idIncidencia) {
+        this.idIncidencia = idIncidencia;
+    }
+
     public Incidencias(Empleados empleadosByOrigen, Empleados empleadosByDestino, String fechaHora, String tipo, String detalle) {
        this.empleadosByOrigen = empleadosByOrigen;
        this.empleadosByDestino = empleadosByDestino;
@@ -69,6 +73,13 @@ public class Incidencias  implements java.io.Serializable {
     public void setDetalle(String detalle) {
         this.detalle = detalle;
     }
+
+    @Override
+    public String toString() {
+        return "Incidencias{" + "idIncidencia=" + idIncidencia + ", empleadosByOrigen=" + empleadosByOrigen + ", empleadosByDestino=" + empleadosByDestino + ", fechaHora=" + fechaHora + ", tipo=" + tipo + ", detalle=" + detalle + '}';
+    }
+
+
 
 
 

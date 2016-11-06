@@ -17,6 +17,10 @@ public class Historial  implements java.io.Serializable {
     public Historial() {
     }
 
+    public Historial(Integer idIncidencia) {
+        this.idIncidencia = idIncidencia;
+    }
+
     public Historial(Empleados empleados, String tipoEvento, String fechaHora) {
        this.empleados = empleados;
        this.tipoEvento = tipoEvento;
@@ -50,6 +54,11 @@ public class Historial  implements java.io.Serializable {
     
     public void setFechaHora(String fechaHora) {
         this.fechaHora = fechaHora;
+    }
+
+    @Override
+    public String toString() {
+        return "Historial{" + "idIncidencia=" + idIncidencia + ", empleados=" + empleados + ", tipoEvento=" + tipoEvento + ", fechaHora=" + fechaHora + '}';
     }
 
 
